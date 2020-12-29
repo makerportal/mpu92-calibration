@@ -12,6 +12,10 @@ Install the following Python packages onto the Raspberry Pi:
 pi@raspberrypi~ $ sudo pip3 install scipy matplotlib numpy
 pi@raspberrypi~ $ sudo apt-get install libatlas-base-dev
 ```
-Upon successful of the library installs above, download the mpu9250_i2c.py (the main backend for reading the MPU9250) from the repository along with the imu_test.py code. Run the imu_test.py and check that the 9 variables are being outputted similar to the screenshot below:
+Upon successful of the library installs above, download the mpu9250_i2c.py (the main backend for reading the MPU9250) from the repository along with the imu_test.py code. 
+
+- Run the imu_test.py 
+
+Verify that the 9 variables are being outputted similar to the screenshot below:
 
 ![MPU9250 Test Printout](./images/imu_test_printout.png)
