@@ -19,3 +19,7 @@ Upon successful of the library installs above, download the mpu9250_i2c.py (the 
 Verify that the 9 variables are being outputted similar to the screenshot below:
 
 ![MPU9250 Test Printout](./images/imu_test_printout.png)
+___
+### - Calibration Outline - 
+
+The calibration procedure 
