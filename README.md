@@ -8,5 +8,5 @@ Power is supplied to the MPU9250 via the 3.3V/GND pins on the Raspberry Pi compu
 
 ### - Python Calibration Procedure - 
 ```bash
-pi@raspberrypi~ $</font> sudo pip3 install scipy
+pi@raspberrypi~ $ sudo pip3 install scipy matplotlib numpy
 ```
