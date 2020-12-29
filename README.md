@@ -7,6 +7,6 @@ Power is supplied to the MPU9250 via the 3.3V/GND pins on the Raspberry Pi compu
 ![Wiring diagram of MPU9265 to RPI4](./images/mpu9250_raspberry_pi_4_wiring_diagram.png)
 
 ### - Python Calibration Procedure - 
-'''
+'''bash
 pi@raspberrypi~ $</font> sudo pip3 install scipy
 '''
