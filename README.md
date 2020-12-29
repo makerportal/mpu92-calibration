@@ -22,4 +22,8 @@ Verify that the 9 variables are being outputted similar to the screenshot below:
 ___
 ### - Calibration Outline - 
 
-The calibration procedure 
+The calibration procedure uses a uniform cube to calibrate each sensor on the IMU (accel, gyro, mag). There are different procedures involved in calibrating each sensor, which can be broken down as follows:
+
+- Gyroscope: calibrate under steady conditions
+- Accelerometer: calibrate under graviation for each axis
+- Magnetometer: calibrate under 360 degree rotation for each axis
