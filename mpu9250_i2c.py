@@ -5,8 +5,8 @@
 #
 # This code handles the smbus 
 # communications between the RPi and the
-# GY-91 (MPU9250+BMP280). For implementations
-# see: gy91_plotter_basic.py
+# MPU9250 IMU. For testing the MPU9250
+# see: imu_test.py
 #
 #########################################
 #
