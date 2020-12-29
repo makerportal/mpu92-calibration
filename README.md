@@ -7,6 +7,7 @@ Power is supplied to the MPU9250 via the 3.3V/GND pins on the Raspberry Pi compu
 ![Wiring diagram of MPU9265 to RPI4](./images/mpu9250_raspberry_pi_4_wiring_diagram.png)
 
 ### - Python Library Installs and IMU Tests - 
-```diff
-+ pi@raspberrypi~ $ sudo pip3 install scipy matplotlib numpy
+```bash
+pi@raspberrypi~ $ sudo pip3 install scipy matplotlib numpy
 ```
+Upon successful of the library installs above, download the mpu9250_i2c.py (the main backend for reading the MPU9250) from the repository along with the imu_test.py code. Run the imu_test.py and check that the 9 variables are being outputted.
