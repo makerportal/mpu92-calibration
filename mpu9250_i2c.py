@@ -66,9 +66,6 @@ def mpu6050_conv():
     acc_x = read_raw_bits(ACCEL_XOUT_H)
     acc_y = read_raw_bits(ACCEL_YOUT_H)
     acc_z = read_raw_bits(ACCEL_ZOUT_H)
-
-    # raw temp bits
-##    t_val = read_raw_bits(TEMP_OUT_H) # uncomment to read temp
     
     # raw gyroscope bits
     gyro_x = read_raw_bits(GYRO_XOUT_H)
@@ -83,8 +80,7 @@ def mpu6050_conv():
     w_x = (gyro_x/(2.0**15.0))*gyro_sens
     w_y = (gyro_y/(2.0**15.0))*gyro_sens
     w_z = (gyro_z/(2.0**15.0))*gyro_sens
-
-##    temp = ((t_val)/333.87)+21.0 # uncomment and add below in return
+    
     return a_x,a_y,a_z,w_x,w_y,w_z
 
 def AK8963_start():
@@ -139,84 +135,6 @@ def AK8963_conv():
     m_y = (mag_y/(2.0**15.0))*mag_sens
     m_z = (mag_z/(2.0**15.0))*mag_sens
     return m_x,m_y,m_z
-
-def BMP280_start():
-    # collect the temp/pressure compensation parameters
-    bus.write_byte_data(BMP280_ADDR, 0xE0,0xB6) # soft reset the module first
-    time.sleep(0.1)
-    b1 = bus.read_i2c_block_data(BMP280_ADDR, 0x88, 24) # read 24-bytes of calib offsets
-    time.sleep(0.1)
-    # temp compensation coeffs
-    dig_T1 = b1[1] * 256 + b1[0]
-    dig_T2 = b1[3] * 256 + b1[2]
-    if dig_T2 > 32767 :
-        dig_T2 -= 65536
-    dig_T3 = b1[5] * 256 + b1[4]
-    if dig_T3 > 32767 :
-        dig_T3 -= 65536
-        
-    # pressure compensation coeffs
-    dig_P1 = b1[7] * 256 + b1[6]
-    dig_P2 = b1[9] * 256 + b1[8]
-    if dig_P2 > 32767 :
-        dig_P2 -= 65536
-    dig_P3 = b1[11] * 256 + b1[10]
-    if dig_P3 > 32767 :
-        dig_P3 -= 65536
-    dig_P4 = b1[13] * 256 + b1[12]
-    if dig_P4 > 32767 :
-        dig_P4 -= 65536
-    dig_P5 = b1[15] * 256 + b1[14]
-    if dig_P5 > 32767 :
-        dig_P5 -= 65536
-    dig_P6 = b1[17] * 256 + b1[16]
-    if dig_P6 > 32767 :
-        dig_P6 -= 65536
-    dig_P7 = b1[19] * 256 + b1[18]
-    if dig_P7 > 32767 :
-        dig_P7 -= 65536
-    dig_P8 = b1[21] * 256 + b1[20]
-    if dig_P8 > 32767 :
-        dig_P8 -= 65536
-    dig_P9 = b1[23] * 256 + b1[22]
-    if dig_P9 > 32767 :
-        dig_P9 -= 65536
-
-    bus.write_byte_data(BMP280_ADDR, 0xF4, int('00100111',2)) # set the highest sample rate
-    bus.write_byte_data(BMP280_ADDR, 0xF5, int('01000000',2)) # IIR filter and standby
-    time.sleep(0.5)
-    
-    return [dig_T1,dig_T2,dig_T3],[dig_P1,dig_P2,dig_P3,dig_P4,dig_P5,
-                                   dig_P6,dig_P7,dig_P8,dig_P9]
-
-def BMP280_conv():
-    # reading 8 bytes from the BMP280 data register (0xF7)
-    data = bus.read_i2c_block_data(BMP280_ADDR, BMP280_PRESS, 8)
-
-    # Convert pressure and temperature data to 19-bits
-    adc_p = ((data[0] * 65536) + (data[1] * 256) + (data[2] & 0xF0)) / 16
-    adc_t = ((data[3] * 65536) + (data[4] * 256) + (data[5] & 0xF0)) / 16
-
-    # Temperature offset calculations
-    var1 = ((adc_t) / 16384.0 - (temp_comp[0]) / 1024.0) * (temp_comp[1])
-    var2 = (((adc_t) / 131072.0 - (temp_comp[0]) / 8192.0) * ((adc_t)/131072.0 -\
-                                                              (temp_comp[0])/8192.0)) * (temp_comp[2])
-    t_fine = (var1 + var2)
-    cTemp = (var1 + var2) / 5120.0
-
-    # Pressure offset calculations
-    var1 = (t_fine / 2.0) - 64000.0
-    var2 = var1 * var1 * (pres_comp[5]) / 32768.0
-    var2 = var2 + var1 * (pres_comp[4]) * 2.0
-    var2 = (var2 / 4.0) + ((pres_comp[3]) * 65536.0)
-    var1 = ((pres_comp[2]) * var1 * var1 / 524288.0 + ( pres_comp[1]) * var1) / 524288.0
-    var1 = (1.0 + var1 / 32768.0) * (pres_comp[0])
-    p = 1048576.0 - adc_p
-    p = (p - (var2 / 4096.0)) * 6250.0 / var1
-    var1 = (pres_comp[8]) * p * p / 2147483648.0
-    var2 = p * (pres_comp[7]) / 32768.0
-    pressure = (p + (var1 + var2 + (pres_comp[6])) / 16.0) / 100
-    return cTemp,pressure
     
 # MPU6050 Registers
 MPU6050_ADDR = 0x68
@@ -246,17 +164,12 @@ AK8963_CNTL  = 0x0A
 AK8963_ASAX = 0x10
 
 mag_sens = 4800.0 # magnetometer sensitivity: 4800 uT
-#BMP280 registers
-BMP280_ADDR =  0x76
-BMP280_PRESS = 0xF7
 
 # start I2C driver
 bus = smbus.SMBus(1) # start comm with i2c bus
 time.sleep(0.1)
 gyro_sens,accel_sens = MPU6050_start() # instantiate gyro/accel
-##gyro_sens,accel_sens = initMPU9250() # instantiate gyro/accel
 time.sleep(0.1)
 AK8963_coeffs = AK8963_start() # instantiate magnetometer
 time.sleep(0.1)
-##temp_comp,pres_comp = BMP280_start() # start the bmp280 pressure/temp sensor
-##time.sleep(0.5)
+
