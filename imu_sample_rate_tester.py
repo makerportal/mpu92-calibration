@@ -4,9 +4,8 @@
 ######################################################
 #
 # This code reads data from the MPU9250/MPU9265 board
-# (MPU6050 - accel/gyro, AK8963 - mag) to verify its
-# correct wiring to a Raspberry Pi and the functionality
-# of the MPU9250_i2c.py library
+# (MPU6050 - accel/gyro, AK8963 - mag) to measure the
+# approximate sample rate of the IMU via I2C on the RPi
 #
 #
 ######################################################
