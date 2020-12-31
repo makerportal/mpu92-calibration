@@ -27,3 +27,7 @@ The calibration procedure uses a uniform cube to calibrate each sensor on the IM
 - Gyroscope: calibrate under steady conditions
 - Accelerometer: calibrate under graviation for each axis
 - Magnetometer: calibrate under 360 degree rotation for each axis
+
+Keeping in mind the coordinate reference for the MPU9250:
+
+![MPU9250 Coordinate References](./images/.png)
