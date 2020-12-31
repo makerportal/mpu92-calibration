@@ -30,4 +30,4 @@ The calibration procedure uses a uniform cube to calibrate each sensor on the IM
 
 Keeping in mind the coordinate reference for the MPU9250:
 
-![MPU9250 Coordinate References](./images/.png)
+![MPU9250 Coordinate References](./images/mpu6050_ak8963_drawing_coordinates.png)
