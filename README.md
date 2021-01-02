@@ -37,4 +37,4 @@ ___
 The plot below is an example output of the following script:
 - gyroscope_calibration.py
 
-![MPU9250 Gyro Output](./images/gyro_calibration_output_white.jpg)
+![MPU9250 Gyro Output](./images/gyro_calibration_output_github.jpg)
