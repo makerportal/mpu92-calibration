@@ -12,7 +12,8 @@
 ######################################################
 #
 # wait 5-sec for IMU to connect
-import time
+import time,sys
+sys.path.append("../")
 t0 = time.time()
 start_bool = False # if IMU start fails - stop calibration
 while time.time()-t0<5:
