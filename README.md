@@ -44,4 +44,4 @@ ___
 The plot below is an example output of the following script:
 - accel_calibration.py
 
-![MPU9250 Accel Output](./images/accel_calibration_output_github.jpg)
+![MPU9250 Accel Output](./images/accel_calibration_output_white.jpg)
