@@ -46,7 +46,7 @@ def accel_cal():
     print("Accelerometer Calibration")
     mpu_offsets = [[],[],[]] # offset array to be printed
     axis_vec = ['z','y','x'] # axis labels
-    cal_directions = ["upward","downward","perpendicular"] # direction for IMU cal
+    cal_directions = ["upward","downward","perpendicular to gravity"] # direction for IMU cal
     cal_indices = [2,1,0] # axis indices
     for qq,ax_qq in enumerate(axis_vec):
         ax_offsets = [[],[],[]]
