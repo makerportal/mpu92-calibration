@@ -37,4 +37,4 @@ Keeping in mind the coordinate reference for the MPU9250:
 This section pertains to the script:
 - gyroscope_calibration.py
 
-![MPU9250 Gyro Output](./images/gyro_calibration_output.jpg)
+![MPU9250 Gyro Output](./images/gyro_calibration_output_white.jpg)
