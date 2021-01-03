@@ -45,3 +45,12 @@ The plot below is an example output of the following script:
 - accel_calibration.py
 
 ![MPU9250 Accel Output](./images/accel_calibration_output_white.jpg)
+
+___
+### - Displacement Approximated from Accelerometer Double Integration - 
+
+The plot below is an example output of the following script:
+- accel_integration.py
+
+![MPU9250 Accel Output](./images/)
+
