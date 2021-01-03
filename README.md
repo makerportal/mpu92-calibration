@@ -52,5 +52,5 @@ ___
 The plot below is an example output of the following script:
 - accel_integration.py
 
-![MPU9250 Accel Output](./images/)
+![MPU9250 Accel Output](./images/accel_veloc_displace_integration_white.png)
 
