@@ -59,3 +59,10 @@ The plot below is an example output of the following script:
 
 ![MPU9250 Accel Output](./images/accel_veloc_displace_integration_white.png)
 
+___
+### - Magnetometer Hard Iron Offset - 
+
+The plot below is an example output of the following script:
+- mag_hard_calibration.py
+
+![MPU9250 Mag Output](./images/mag_cal_hard_offset_white.png)
