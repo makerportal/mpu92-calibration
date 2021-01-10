@@ -36,6 +36,15 @@ The calibration procedure uses a uniform cube to calibrate each sensor on the IM
 Keeping in mind the coordinate reference for the MPU9250:
 
 ![MPU9250 Coordinate References](./images/mpu6050_ak8963_drawing_coordinates.png)
+
+___
+### - Full Calibration and Real-Time Output -
+
+The plot below is an example output of the following script:
+- mpu9250_full_calibration.py
+
+![MPU9250 Full Output](./images/mpu9250_real_time_plot_white.jpg)
+
 ___
 ### - Gyroscope Calibration Output - 
 
@@ -67,10 +76,3 @@ The plot below is an example output of the following script:
 
 ![MPU9250 Mag Output](./images/mag_cal_hard_offset_white.png)
 
-___
-### - Full Calibration and Real-Time Output -
-
-The plot below is an example output of the following script:
-- mpu9250_full_calibration.py
-
-![MPU9250 Full Output](./images/mpu9250_real_time_plot_white.jpg)
