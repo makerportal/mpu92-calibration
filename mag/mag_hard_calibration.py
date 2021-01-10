@@ -54,9 +54,6 @@ def outlier_removal(x_ii,y_ii):
         x_ii[y_outliers] = np.nan # null outlier
     return x_ii,y_ii
 
-def mag_fit(x,a,b):
-    return (a*x)+b
-
 def mag_cal():
     print("-"*50)
     print("Magnetometer Calibration")
