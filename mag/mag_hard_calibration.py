@@ -24,14 +24,13 @@ while time.time()-t0<5:
     except:
         continue
 import numpy as np
-import csv,datetime
+import csv
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
 
 time.sleep(2) # wait for mpu to load
 # 
 #####################################
-# Mag Calibration Fitting
+# Mag Calibration Functions
 #####################################
 #
 def outlier_removal(x_ii,y_ii):
@@ -122,8 +121,6 @@ def mag_cal_plot():
         axs[jj].set_xlim(mag_lims) # set limits
         axs[jj].legend() # legend
         axs[jj].set_aspect('equal',adjustable='box') # square axes
-    fig.savefig('mag_cal_hard_offset.png',dpi=300,bbox_inches='tight',
-                facecolor='#FCFCFC') # save figure
     fig.savefig('mag_cal_hard_offset_white.png',dpi=300,bbox_inches='tight',
                 facecolor='#FFFFFF') # save figure
     plt.show() #show plot
