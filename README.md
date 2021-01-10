@@ -73,4 +73,4 @@ ___
 The plot below is an example output of the following script:
 - mpu9250_full_calibration.py
 
-![MPU9250 Full Output](./images/mpu9250_full_output.png)
+![MPU9250 Full Output](./images/mpu9250_real_time_plot_white.jpg)
