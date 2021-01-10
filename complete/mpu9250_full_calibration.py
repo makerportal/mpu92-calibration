@@ -288,7 +288,7 @@ if __name__ == '__main__':
         cal_labels = [['a_x','m','b'],['a_y','m','b'],['a_z','m','b'],'w_x','w_y','w_z',
                       ['m_x','m_x0'],['m_y','m_y0'],['m_z','m_z0']]
         mag_cal_axes = ['z','y','x'] # axis order being rotated for mag cal
-        cal_filename = 'mpu9265_cal_params.csv' # filename for saving calib coeffs
+        cal_filename = 'mpu9250_cal_params.csv' # filename for saving calib coeffs
         cal_size = 200 # how many points to use for calibration averages
         cal_offsets = np.array([[],[],[],0.0,0.0,0.0,[],[],[]]) # cal vector
         #
