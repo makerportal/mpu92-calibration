@@ -66,3 +66,11 @@ The plot below is an example output of the following script:
 - mag_hard_calibration.py
 
 ![MPU9250 Mag Output](./images/mag_cal_hard_offset_white.png)
+
+___
+### - Full Calibration and Real-Time Output -
+
+The plot below is an example output of the following script:
+- mpu9250_full_calibration.py
+
+![MPU9250 Full Output](./images/mpu9250_full_output.png)
