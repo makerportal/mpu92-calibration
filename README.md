@@ -4,6 +4,7 @@ Calibration procedure for the MPU9250's accelerometer, gyroscope, and magnetomet
 Full tutorials at the following links:
 - [Calibration of an Inertial Measurement Unit (IMU) with Raspberry Pi - Part I](https://makersportal.com/blog/calibration-of-an-inertial-measurement-unit-with-raspberry-pi)
 - [Gyroscope and Accelerometer Calibration with Raspberry Pi](https://makersportal.com/blog/calibration-of-an-inertial-measurement-unit-imu-with-raspberry-pi-part-ii)
+- [Calibration of a Magnetometer with Raspberry Pi](https://makersportal.com/blog/calibration-of-a-magnetometer-with-raspberry-pi)
 
 
 ### - Wiring Diagram - 
