@@ -182,7 +182,7 @@ def mpu_plot_test():
     axs[2] = fig.add_subplot(325) # mag axis
     axs[3] = fig.add_subplot(122,projection='polar') # heading axis
     plt_pts = 1000 # points to plot
-    y_labels = ['Acceleration [g]','Angular Veloity [$^\deg/s$]','Magetic Field [uT]']
+    y_labels = ['Acceleration [g]','Angular Velocity [$^\circ/s$]','Magnetic Field [uT]']
     for ax_ii in range(0,len(y_labels)):
         axs[ax_ii].set_xlim([0,plt_pts]) # set x-limits for time-series plots
         axs[ax_ii].set_ylabel(y_labels[ax_ii]) # set y-labels
