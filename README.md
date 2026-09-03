@@ -1,6 +1,8 @@
 # MPU9250 Calibration using Python and a Raspberry Pi Computer
 Calibration procedure for the MPU9250's accelerometer, gyroscope, and magnetometer using Python and a Raspberry Pi Computer.
 
+**Interactive companion:** [Quaternion & Euler Angle Converter](https://makerportal.ai/lab/quaternion-euler-converter) — inspect orientation conversions and singularities in the browser.
+
 Full tutorials at the following links:
 - [Calibration of an Inertial Measurement Unit (IMU) with Raspberry Pi - Part I](https://makersportal.com/blog/calibration-of-an-inertial-measurement-unit-with-raspberry-pi)
 - [Gyroscope and Accelerometer Calibration with Raspberry Pi](https://makersportal.com/blog/calibration-of-an-inertial-measurement-unit-imu-with-raspberry-pi-part-ii)
@@ -76,4 +78,3 @@ The plot below is an example output of the following script:
 - mag_hard_calibration.py
 
 ![MPU9250 Mag Output](./images/mag_cal_hard_offset_white.png)
-
